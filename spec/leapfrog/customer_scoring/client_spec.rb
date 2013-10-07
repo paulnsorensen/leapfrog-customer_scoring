@@ -52,7 +52,7 @@ describe Leapfrog::CustomerScoring do
       end
       let(:client) { Leapfrog::CustomerScoring::Client.new }
 
-      it "should raise an InvalidUrl exception" do
+      it "should raise an ResourceNotFound exception" do
         expect { client.get_score("50000", "60621", "35") }.
         to raise_error(Leapfrog::CustomerScoring::ResourceNotFound)
       end
@@ -97,7 +97,7 @@ describe Leapfrog::CustomerScoring do
       end
       let(:client) { Leapfrog::CustomerScoring::Client.new }
 
-      it "should raise a Timeout exception" do
+      it "should raise a ServerTimeout exception" do
         expect { client.get_score("50000", "60621", "35") }.
         to raise_error(Leapfrog::CustomerScoring::ServerTimeout)
       end
