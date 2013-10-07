@@ -1,5 +1,9 @@
 # Leapfrog::CustomerScoring
 
+[![Dependency Status](https://gemnasium.com/paulnsorensen/leapfrog-customer_scoring.png)](https://gemnasium.com/paulnsorensen/leapfrog-customer_scoring)
+[![Code Climate](https://codeclimate.com/github/paulnsorensen/leapfrog-customer_scoring.png)](https://codeclimate.com/github/paulnsorensen/leapfrog-customer_scoring)
+
+
 Ruby API client for Leapfrog Online customer scoring
 
 ## Installation
