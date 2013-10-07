@@ -14,8 +14,8 @@ module Leapfrog
       #   client = Leapfrog::CustomerScoring::Client.new(other_url)
       #
       # This is the url to which the client will make requests
-      def initialize(url="")
-        @url = url.empty? ? DEFAULT_URL : url
+      def initialize(url=DEFAULT_URL)
+        @url = url
       end
 
       # Makes request to the initialized endpoint to retrieve customer
