@@ -3,10 +3,31 @@ module Leapfrog
     class Client
       DEFAULT_URL = "http://internal.leapfrogonline.com/customer_scoring"
 
+      # You may initialize the Client with any url or just use the default
+      # url of "http://internal.leapfrogonline.com/customer_scoring".
+      # 
+      #   client = Leapfrog::CustomerScoring::Client.new
+      #
+      # -- OR--
+      #
+      #   other_url = "http://example.com/customer_scoring"
+      #   client = Leapfrog::CustomerScoring::Client.new(other_url)
+      #
+      # This is the url to which the client will make requests
       def initialize(url="")
         @url = url.empty? ? DEFAULT_URL : url
       end
 
+      # Makes request to the initialized endpoint to retrieve customer
+      # scoring advice. The <tt>income</tt>, <tt>zipcode</tt> and
+      # <tt>age</tt> parameters are required. The return value is a
+      # <tt>Hash</tt> with keys containing the <tt>:propensity</tt>
+      # and <tt>:ranking </tt> for customer with the passed parameters
+      #
+      #   advice = client.get_score("50000", "60621", "35")
+      #   advice.inspect
+      #   => "{:propensity=>0.26532, :ranking=>\"C\"}"
+      #
       def get_score(income, zipcode, age)
         params = {income: income, zipcode: zipcode, age: age}
         begin
