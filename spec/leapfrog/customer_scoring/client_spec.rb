@@ -4,12 +4,14 @@ describe Leapfrog::CustomerScoring do
   describe "#initialize" do
     it "should have the correct default url" do
       client = Leapfrog::CustomerScoring::Client.new
-      expect(client.send(:url)).to eql(Leapfrog::CustomerScoring::Client::DEFAULT_URL)
+      default_url = "http://internal.leapfrogonline.com/customer_scoring"
+      expect(client.send(:url)).to eql(default_url)
     end
 
     it "should allow another url to be specified" do
-      client = Leapfrog::CustomerScoring::Client.new("http://paulnsorensen.com")
-      expect(client.send(:url)).to eql("http://paulnsorensen.com")
+      custom_url = "http://paulnsorensen.com"
+      client = Leapfrog::CustomerScoring::Client.new(custom_url)
+      expect(client.send(:url)).to eql(custom_url)
     end
   end
 
