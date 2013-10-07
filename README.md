@@ -24,6 +24,10 @@ Or install it yourself as:
 
 ## Usage
 
+Require the gem.
+
+    require 'leapfrog/customer_scoring'
+
 Clients are instantiated with `http://internal.leapfrogonline/customer_scoring` as the default URL. 
 
     client = Leapfrog::CustomerScoring::Client.new
